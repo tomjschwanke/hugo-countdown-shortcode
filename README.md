@@ -1,33 +1,15 @@
 # hugo-countdown-shortcode
-Javascript Countdown timer shortcode for HUGO generated sites.
-We create alot of workshop content with HUGO, and managing breaks is currently a little clunky. This shortcode adds a Countdonw Timer to your page allowing you to present something back to the attendees. 
+Javascript countdown timer shortcode for HUGO generated sites.
+I needed a countdown for a specific point in time. I found https://github.com/rickosaws/hugo-countdown-shortcode and modified it to fit my needs.
 
 ![Countdown Timer](/.images/countdown.png)
 
-The Countdown timer contains 2 Messages (Start/End) which can be cusrtomised and will hide the countdown elements when it reaches 0.
-
-```NOTE: Disabling Live Reload will prevent an issue where the timer may accidentally reset in certain circumstances``` 
+The countdown timer contains 2 Messages (Start/End) which can be customised and will hide the countdown elements when it reaches 0.
 
 ### Installation
-Simply copy the shortcode and JS into the respective HUGO folders and your done. Im using the Learn theme so the files are relative to that theme. 
+Simply copy the shortcode and JS into the respective HUGO folders and your done. This shortcode is independent of any theme
 
 ### Usage
-The Shortcode uses the {{ countdown `int`}} short code followed by an  INTEGER value representing the mins to countdown from.
+The Shortcode uses the {{< countdown end=`timestamp` headline=`string` endText=`string` >}}. Use a unix seconds timestamp to set the end datetime and optionally a headline for the countdown as well as a message for when its finished.
 
-e.g ```{{ countdown 15 }}``` for a 15min Countdown.
-
-To use simply add the shortcode {{ countdown 15 }} in your page. 
-
-The default start message displayed can also be updated by modifying the `countdown.html` and updating the following line;
-
-```<h3 id="headline">Great Work Everyone!. Lets take a Break!</h1>```
-
-The default end message displayed can also be updated by modifying the `countdown.js` and updating the following line;
-
-```headline.innerText = "Lets get back to it!";```
-
-
-#### TODO
-+ Handle exceptions e.g (non integer values)
-+ Extend the shortcode parameters to allow passing start and end message as an override to the hard coded defaults. 
-
+e.g ```{{< countdown end=1744308000 headline="Countdown" endText="Countdown ended" >}}``` for a countdown to Thu, 10 Apr 2025 18:00:00 GMT with customized headline and end text.

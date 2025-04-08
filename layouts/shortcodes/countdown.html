@@ -1,0 +1,28 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $js := resources.Get "js/countdown.js" | js.Build "js/countdown.js" }}
+{{ $end := .Get "end" -}}
+{{ $headline := .Get "headline" -}}
+{{ $endText := .Get "endText" -}}
+
+<div class="container">
+   <h3 id="headline">{{ $headline }}</h1>
+   <div id="countdown">
+      <meta name="end" content={{ $end }}></meta>
+      <meta name="endText" content={{ $endText }}></meta>
+      <script src="{{ $js.RelPermalink }}"></script>
+     <table>
+      <tr>
+        <td><span id="days" style="font-weight:bold"></span></td>
+        <td><span id="hours" style="font-weight:bold"></span></td>
+        <td><span id="minutes" style="font-weight:bold"></span></td>
+        <td><span id="seconds" style="font-weight:bold"></span></td>
+      </tr>
+      <tr>
+        <td>Days</td>
+        <td>Hours</td>
+        <td>Minutes</td>
+        <td>Seconds</td>
+      </tr>
+     </table>
+   </div>
+  </div>
