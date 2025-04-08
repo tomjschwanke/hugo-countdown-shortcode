@@ -10,6 +10,6 @@ The countdown timer contains 2 Messages (Start/End) which can be customised and 
 Simply copy the shortcode and JS into the respective HUGO folders and your done. This shortcode is independent of any theme
 
 ### Usage
-The Shortcode uses the {{< countdown end=`timestamp` headline=`string` endText=`string` >}}. Use a unix seconds timestamp to set the end datetime and optionally a headline for the countdown as well as a message for when its finished.
+To use the shortcode, put the following in your article/page {{< countdown end=`timestamp` headline=`string` endText=`string` >}}. Use a unix seconds timestamp to set the end datetime and optionally a headline for the countdown as well as a message for when its finished.
 
 e.g ```{{< countdown end=1744308000 headline="Countdown" endText="Countdown ended" >}}``` for a countdown to Thu, 10 Apr 2025 18:00:00 GMT with customized headline and end text.
